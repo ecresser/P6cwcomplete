@@ -18,14 +18,37 @@ Fonts:
 
 */
 
+/* Add Proxima Nova font-face declarations at the top of your CSS */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('https://fonts.cdnfonts.com/s/16109/ProximaNova-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('https://fonts.cdnfonts.com/s/16109/ProximaNova-Extrabld.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('https://fonts.cdnfonts.com/s/16109/ProximaNova-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
 
+body, button, input, select, textarea {
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
   margin: 0;
-  padding: 30px;
+  padding: 0px 0; /* Reduced top and bottom padding */
   background-color: #003366;
   color: #333;
 }
@@ -42,7 +65,8 @@ body {
 h1 {
   text-align: center;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 800; /* Extra Bold */
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
   margin-bottom: 20px;
   color: #333;
 }
@@ -57,6 +81,8 @@ h1 img {
   font-size: 18px;
   margin-bottom: 30px;
   text-align: center;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
 }
 
 .stats {
@@ -72,7 +98,7 @@ h1 img {
   margin: 0;
   font-size: 18px;
   font-weight: bold;
-  color: #333;
+  color: #000000;
 }
 
 .game-grid {
@@ -94,6 +120,16 @@ h1 img {
   transition: background-color 0.3s;
   position: relative;
   overflow: hidden;
+}
+
+.grid-cell.collected {
+  background-color: #e8d87c; /* Light yellow highlight */
+  transition: background-color 0.3s;
+}
+
+.grid-cell.collected-bad {
+  background-color: #ffd6d6; /* Light red highlight */
+  transition: background-color 0.3s;
 }
 
 .water-can-wrapper {
@@ -168,6 +204,8 @@ button {
   display: block;
   margin: 30px auto 0;
   transition: background-color 0.2s;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
+  font-weight: 600; /* Semibold */
 }
 
 /* Score Flash Animation */
@@ -198,6 +236,39 @@ button {
     opacity: 0;
     transform: translate(-50%, -40px);
   }
+}
+
+.difficulty-select {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.difficulty-select label {
+  font-weight: bold;
+  margin-right: 8px;
+}
+.difficulty-select select {
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background-color: #fff; /* Set background to white */
+}
+
+.footer {
+  text-align: center;
+  margin-top: 10px;
+  padding: 0px 0 20px 0;
+  background: none;
+  font-size: 17px;
+}
+.footer a {
+  color: #2E9DF7;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.footer a:hover {
+  color: #FFC907;
 }
 
 @media (max-width: 600px) {
